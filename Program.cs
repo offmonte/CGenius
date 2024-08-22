@@ -1,6 +1,16 @@
+using FirstOne.Data;
+using FirstOne.Reposotory.Inteface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<dbContext>(options =>
+    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"))
+);
+
+builder.Services.AddScoped<IEmpregadoRepository, IEmpregadoRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
