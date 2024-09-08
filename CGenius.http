@@ -1,0 +1,6 @@
+@CGenius_HostAddress = http://localhost:5039
+
+GET {{CGenius_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

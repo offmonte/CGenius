@@ -1,6 +1,6 @@
 ﻿using FirstOne.Models;
 
-namespace FirstOne.Reposotory.Inteface
+namespace FirstOne.Repository.Interface
 {
     public interface IEmpregadoRepository
     {
@@ -9,5 +9,6 @@ namespace FirstOne.Reposotory.Inteface
         Task<Empregado> AddEmpregado(Empregado empregado);
         Task<Empregado> UpdateEmpregado(Empregado empregado);
         void DeleteEmpregado(int empId);
+        Task<IEnumerable<Empregado>> GetEmpregadosPorDepartamento(int departamentoId);
     }
 }
