@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace FirstOne.Controllers
+namespace CGenius.Controllers
 {
     [ApiController]
     [Route("[controller]")]

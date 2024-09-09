@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using FirstOne.Models;
+using CGenius.Models;
 
-namespace FirstOne.Repository.Interface
+namespace CGenius.Repository.Interface
 {
     public interface IPlanoRepository
     {

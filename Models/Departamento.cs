@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FirstOne.Models
+namespace CGenius.Models
 {
     public class Departamento
     {

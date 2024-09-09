@@ -1,4 +1,4 @@
-namespace FirstOne
+namespace CGenius
 {
     public class WeatherForecast
     {

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using FirstOne.Models;
-using FirstOne.Repository.Interface;
-using FirstOne.Data;
+using CGenius.Models;
+using CGenius.Repository.Interface;
+using CGenius.Data;
 
-namespace FirstOne.Repository
+namespace CGenius.Repository
 {
     public class AtendenteRepository : IAtendenteRepository
     {

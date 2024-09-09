@@ -1,9 +1,9 @@
-﻿using FirstOne.Models;
-using FirstOne.Repository.Interface;
+﻿using CGenius.Models;
+using CGenius.Repository.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FirstOne.Controllers
+namespace CGenius.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

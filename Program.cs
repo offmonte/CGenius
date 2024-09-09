@@ -1,6 +1,6 @@
-using FirstOne.Data;
-using FirstOne.Repository;
-using FirstOne.Repository.Interface;
+using CGenius.Data;
+using CGenius.Repository;
+using CGenius.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

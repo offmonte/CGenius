@@ -1,10 +1,10 @@
 ﻿
-using FirstOne.Data;
-using FirstOne.Models;
-using FirstOne.Repository.Interface;
+using CGenius.Data;
+using CGenius.Models;
+using CGenius.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace FirstOne.Repository
+namespace CGenius.Repository
 {
     public class DepartamentoRepository : IDepartamentoRepository
     {

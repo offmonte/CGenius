@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FirstOne.Models
+namespace CGenius.Models
 {
     public class Especificacao
     {

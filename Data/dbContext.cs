@@ -1,7 +1,7 @@
-﻿using FirstOne.Models;
+﻿using CGenius.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FirstOne.Data
+namespace CGenius.Data
 {
     public class dbContext : DbContext
     {

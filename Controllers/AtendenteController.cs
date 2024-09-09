@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using FirstOne.Models;
-using FirstOne.Repository.Interface;
+using CGenius.Models;
+using CGenius.Repository.Interface;
 
-namespace FirstOne.Controllers
+namespace CGenius.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace FirstOne.Migrations
+namespace CGenius.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration

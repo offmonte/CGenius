@@ -1,4 +1,4 @@
-﻿namespace FirstOne.Models
+﻿namespace CGenius.Models
 {
     public enum Genero
     {
