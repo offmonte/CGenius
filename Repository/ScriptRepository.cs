@@ -49,7 +49,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async void DeleteScript(int idScript)
+        public async Task DeleteScript(int idScript)
         {
             var script = await _dbContext.Scripts.FirstOrDefaultAsync(s => s.IdScript == idScript);
             if (script != null)

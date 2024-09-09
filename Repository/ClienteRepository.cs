@@ -55,7 +55,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async void DeleteCliente(string cpfCliente)
+        public async Task DeleteCliente(string cpfCliente)
         {
             var cliente = await _dbContext.Clientes.FirstOrDefaultAsync(c => c.CpfCliente == cpfCliente);
             if (cliente != null)

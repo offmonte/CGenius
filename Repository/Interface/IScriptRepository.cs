@@ -10,6 +10,6 @@ namespace CGenius.Repository.Interface
         Task<Script> GetScript(int idScript);
         Task<Script> AddScript(Script script);
         Task<Script> UpdateScript(Script script);
-        void DeleteScript(int idScript);
+        Task DeleteScript(int idScript);
     }
 }

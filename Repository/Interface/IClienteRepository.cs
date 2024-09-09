@@ -10,6 +10,6 @@ namespace CGenius.Repository.Interface
         Task<Cliente> GetCliente(string cpfCliente);
         Task<Cliente> AddCliente(Cliente cliente);
         Task<Cliente> UpdateCliente(Cliente cliente);
-        void DeleteCliente(string cpfCliente);
+        Task DeleteCliente(string cpfCliente);
     }
 }

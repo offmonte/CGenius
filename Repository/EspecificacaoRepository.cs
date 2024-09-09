@@ -55,7 +55,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async void DeleteEspecificacao(int idEspecificacao)
+        public async Task DeleteEspecificacao(int idEspecificacao)
         {
             var especificacao = await _dbContext.Especificacoes.FirstOrDefaultAsync(e => e.IdEspecificacao == idEspecificacao);
             if (especificacao != null)

@@ -48,7 +48,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async Task<Atendente> DeleteAtendente(string cpf)
+        public async Task DeleteAtendente(string cpf)
         {
             var result = await _dbContext.Atendentes.FirstOrDefaultAsync(a => a.CpfAtendente == cpf);
             if (result != null)
@@ -56,7 +56,6 @@ namespace CGenius.Repository
                 _dbContext.Atendentes.Remove(result);
                 await _dbContext.SaveChangesAsync();
             }
-            return null;
         }
     }
 }

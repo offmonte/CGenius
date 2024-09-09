@@ -2,4 +2,4 @@
 
 Monolitico
 
-Como nossa ideia n�o tem perspectiva de crescimento o Monolito seria a melhor soluc�o (discorrer mais sobre)
+Como nossa ideia nao tem perspectiva de crescimento o Monolito seria a melhor solucao (discorrer mais sobre)

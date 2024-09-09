@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CGenius.Models;
 using CGenius.Repository.Interface;
@@ -20,50 +22,83 @@ namespace CGenius.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Atendente>>> GetAtendentes()
         {
-            var atendentes = await _atendenteRepository.GetAtendentes();
-            return Ok(atendentes);
+            try
+            {
+                return Ok(await _atendenteRepository.GetAtendentes());
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter atendentes");
+            }
         }
 
         [HttpGet("{cpf}")]
         public async Task<ActionResult<Atendente>> GetAtendente(string cpf)
         {
-            var atendente = await _atendenteRepository.GetAtendente(cpf);
-            if (atendente == null)
+            try
             {
-                return NotFound();
+                var result = await _atendenteRepository.GetAtendente(cpf);
+                if (result == null) return NotFound();
+
+                return result;
             }
-            return Ok(atendente);
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter atendente");
+            }
         }
 
         [HttpPost]
-        public async Task<ActionResult<Atendente>> PostAtendente([FromBody] Atendente atendente)
+        public async Task<ActionResult<Atendente>> AddAtendente([FromBody] Atendente atendente)
         {
-            var result = await _atendenteRepository.AddAtendente(atendente);
-            return CreatedAtAction(nameof(GetAtendente), new { cpf = result.CpfAtendente }, result);
+            try
+            {
+                if (atendente == null) return BadRequest();
+
+                var createAtendente = await _atendenteRepository.AddAtendente(atendente);
+
+                return CreatedAtAction(nameof(GetAtendente), new { cpf = createAtendente.CpfAtendente }, createAtendente);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar atendente");
+            }
         }
 
         [HttpPut("{cpf}")]
-        public async Task<ActionResult<Atendente>> PutAtendente(string cpf, [FromBody] Atendente atendente)
+        public async Task<ActionResult<Atendente>> UpdateAtendente(string cpf, [FromBody] Atendente atendente)
         {
-            if (cpf != atendente.CpfAtendente)
+            try
             {
-                return BadRequest();
-            }
+                var atendenteToUpdate = await _atendenteRepository.GetAtendente(cpf);
 
-            var result = await _atendenteRepository.UpdateAtendente(atendente);
-            if (result == null)
+                if (atendenteToUpdate == null) return NotFound($"Atendente com CPF {cpf} não encontrado");
+
+                return await _atendenteRepository.UpdateAtendente(atendente);
+            }
+            catch (Exception)
             {
-                return NotFound();
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar atendente");
             }
-
-            return Ok(result);
         }
 
         [HttpDelete("{cpf}")]
-        public async Task<IActionResult> DeleteAtendente(string cpf)
+        public async Task<ActionResult> DeleteAtendente(string cpf)
         {
-            await _atendenteRepository.DeleteAtendente(cpf);
-            return NoContent();
+            try
+            {
+                var atendenteToDelete = await _atendenteRepository.GetAtendente(cpf);
+
+                if (atendenteToDelete == null) return NotFound($"Atendente com CPF {cpf} não encontrado");
+
+                await _atendenteRepository.DeleteAtendente(cpf);
+
+                return Ok($"Atendente com CPF {cpf} deletado");
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao deletar atendente");
+            }
         }
     }
 }
