@@ -52,7 +52,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async Task DeleteVenda(int idVenda)
+        public async void DeleteVenda(int idVenda)
         {
             var venda = await _dbContext.Vendas.FirstOrDefaultAsync(v => v.IdVenda == idVenda);
             if (venda != null)

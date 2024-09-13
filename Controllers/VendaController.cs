@@ -91,7 +91,7 @@ namespace CGenius.Controllers
 
                 if (vendaToDelete == null) return NotFound($"Venda com ID {id} não encontrada");
 
-                await _vendaRepository.DeleteVenda(id);
+                _vendaRepository.DeleteVenda(id);
 
                 return Ok($"Venda com ID {id} deletada");
             }

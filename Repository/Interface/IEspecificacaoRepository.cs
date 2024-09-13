@@ -10,6 +10,6 @@ namespace CGenius.Repository.Interface
         Task<Especificacao> GetEspecificacao(int idEspecificacao);
         Task<Especificacao> AddEspecificacao(Especificacao especificacao);
         Task<Especificacao> UpdateEspecificacao(Especificacao especificacao);
-        Task DeleteEspecificacao(int idEspecificacao);
+        void DeleteEspecificacao(int idEspecificacao);
     }
 }

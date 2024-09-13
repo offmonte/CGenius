@@ -87,7 +87,7 @@ namespace CGenius.Controllers
                 var deptToDelete = await _departamentoRepository.GetDepartamento(id);
                 if (deptToDelete == null) return NotFound($"Departamento com id {id} não encontrado");
 
-                await _departamentoRepository.DeleteDepartamento(id);
+                _departamentoRepository.DeleteDepartamento(id);
 
                 return Ok($"Departamento com id {id} deletado");
             }

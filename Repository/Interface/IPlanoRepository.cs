@@ -10,6 +10,6 @@ namespace CGenius.Repository.Interface
         Task<Plano> GetPlano(int idPlano);
         Task<Plano> AddPlano(Plano plano);
         Task<Plano> UpdatePlano(Plano plano);
-        Task DeletePlano(int idPlano);
+        void DeletePlano(int idPlano);
     }
 }

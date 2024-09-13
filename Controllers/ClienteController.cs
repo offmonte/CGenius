@@ -91,7 +91,7 @@ namespace CGenius.Controllers
 
                 if (clienteToDelete == null) return NotFound($"Cliente com CPF {cpf} não encontrado");
 
-                await _clienteRepository.DeleteCliente(cpf);
+                _clienteRepository.DeleteCliente(cpf);
 
                 return Ok($"Cliente com CPF {cpf} deletado");
             }

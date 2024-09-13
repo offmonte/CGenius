@@ -91,7 +91,7 @@ namespace CGenius.Controllers
 
                 if (especificacaoToDelete == null) return NotFound($"Especificação com ID {id} não encontrada");
 
-                await _especificacaoRepository.DeleteEspecificacao(id);
+                _especificacaoRepository.DeleteEspecificacao(id);
 
                 return Ok($"Especificação com ID {id} deletada");
             }

@@ -62,7 +62,7 @@ namespace CGenius.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteScript(int id)
         {
-            await _scriptRepository.DeleteScript(id);
+            _scriptRepository.DeleteScript(id);
             return NoContent();
         }
     }

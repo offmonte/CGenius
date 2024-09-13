@@ -91,7 +91,7 @@ namespace CGenius.Controllers
 
                 if (planoToDelete == null) return NotFound($"Plano com ID {id} não encontrado");
 
-                await _planoRepository.DeletePlano(id);
+                _planoRepository.DeletePlano(id);
 
                 return Ok($"Plano com ID {id} deletado");
             }

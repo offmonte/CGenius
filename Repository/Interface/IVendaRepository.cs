@@ -10,6 +10,6 @@ namespace CGenius.Repository.Interface
         Task<Venda> GetVenda(int idVenda);
         Task<Venda> AddVenda(Venda venda);
         Task<Venda> UpdateVenda(Venda venda);
-        Task DeleteVenda(int idVenda);
+        void DeleteVenda(int idVenda);
     }
 }

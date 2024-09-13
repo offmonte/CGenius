@@ -50,7 +50,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async Task DeletePlano(int idPlano)
+        public async void DeletePlano(int idPlano)
         {
             var plano = await _dbContext.Planos.FirstOrDefaultAsync(p => p.IdPlano == idPlano);
             if (plano != null)

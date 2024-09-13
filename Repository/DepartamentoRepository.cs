@@ -45,7 +45,7 @@ namespace CGenius.Repository
             return null;
         }
 
-        public async Task DeleteDepartamento(int id)
+        public async void DeleteDepartamento(int id)
         {
             var departamento = await _dbContext.Departamentos.FirstOrDefaultAsync(d => d.DepartamentoId == id);
             if (departamento != null)
