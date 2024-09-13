@@ -91,7 +91,7 @@ namespace CGenius.Controllers
 
                 if (atendenteToDelete == null) return NotFound($"Atendente com CPF {cpf} não encontrado");
 
-                await _atendenteRepository.DeleteAtendente(cpf);
+                _atendenteRepository.DeleteAtendente(cpf);
 
                 return Ok($"Atendente com CPF {cpf} deletado");
             }
