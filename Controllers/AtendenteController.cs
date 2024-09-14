@@ -18,7 +18,7 @@ namespace CGenius.Controllers
         {
             _atendenteRepository = atendenteRepository;
         }
-
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Atendente>>> GetAtendentes()
         {
@@ -31,7 +31,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter atendentes");
             }
         }
-
+        /// <summary>
+        /// Buscar Atendente
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{cpf}")]
         public async Task<ActionResult<Atendente>> GetAtendente(string cpf)
         {
@@ -47,7 +50,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter atendente");
             }
         }
-
+        /// <summary>
+        /// Criar Atendente
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Atendente>> AddAtendente([FromBody] Atendente atendente)
         {
@@ -64,7 +70,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar atendente");
             }
         }
-
+        /// <summary>
+        /// Update Atendente
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{cpf}")]
         public async Task<ActionResult<Atendente>> UpdateAtendente(string cpf, [FromBody] Atendente atendente)
         {
@@ -81,7 +90,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar atendente");
             }
         }
-
+        /// <summary>
+        /// Deletar Atendente
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{cpf}")]
         public async Task<ActionResult> DeleteAtendente(string cpf)
         {

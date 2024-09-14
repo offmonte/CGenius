@@ -31,7 +31,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter vendas");
             }
         }
-
+        /// <summary>
+        /// Buscar Venda
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Venda>> GetVenda(int id)
         {
@@ -47,7 +50,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter venda");
             }
         }
-
+        /// <summary>
+        /// Criar Venda
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Venda>> AddVenda([FromBody] Venda venda)
         {
@@ -64,7 +70,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar venda");
             }
         }
-
+        /// <summary>
+        /// Update Venda
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Venda>> UpdateVenda(int id, [FromBody] Venda venda)
         {
@@ -81,7 +90,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar venda");
             }
         }
-
+        /// <summary>
+        /// Delete Venda
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> DeleteVenda(int id)
         {

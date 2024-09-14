@@ -7,10 +7,6 @@ namespace CGenius.Data
     {
         public dbContext(DbContextOptions<dbContext> options) : base(options) { }
 
-        public DbSet<Empregado> Empregados { get; set; }
-        public DbSet<Departamento> Departamentos { get; set; }
-
-        //CGenius daqui pra baixo
         public DbSet<Atendente> Atendentes { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Especificacao> Especificacoes { get; set; }

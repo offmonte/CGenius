@@ -23,7 +23,10 @@ namespace CGenius.Controllers
             var scripts = await _scriptRepository.GetScripts();
             return Ok(scripts);
         }
-
+        /// <summary>
+        /// Buscar Script
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Script>> GetScript(int id)
         {
@@ -34,14 +37,20 @@ namespace CGenius.Controllers
             }
             return Ok(script);
         }
-
+        /// <summary>
+        /// Criar Script
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Script>> PostScript([FromBody] Script script)
         {
             var result = await _scriptRepository.AddScript(script);
             return CreatedAtAction(nameof(GetScript), new { id = result.IdScript }, result);
         }
-
+        /// <summary>
+        /// Update Script
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult<Script>> PutScript(int id, [FromBody] Script script)
         {
@@ -58,7 +67,10 @@ namespace CGenius.Controllers
 
             return Ok(result);
         }
-
+        /// <summary>
+        /// Delete Script
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteScript(int id)
         {

@@ -31,7 +31,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter planos");
             }
         }
-
+        /// <summary>
+        /// Buscar Plano
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Plano>> GetPlano(int id)
         {
@@ -47,7 +50,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter plano");
             }
         }
-
+        /// <summary>
+        /// Criar Plano
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Plano>> AddPlano([FromBody] Plano plano)
         {
@@ -64,7 +70,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar plano");
             }
         }
-
+        /// <summary>
+        /// Update Plano
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Plano>> UpdatePlano(int id, [FromBody] Plano plano)
         {
@@ -81,7 +90,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar plano");
             }
         }
-
+        /// <summary>
+        /// Delete Plano
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> DeletePlano(int id)
         {

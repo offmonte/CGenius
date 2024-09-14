@@ -31,7 +31,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter clientes");
             }
         }
-
+        /// <summary>
+        /// Buscar Cliente
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{cpf}")]
         public async Task<ActionResult<Cliente>> GetCliente(string cpf)
         {
@@ -47,7 +50,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter cliente");
             }
         }
-
+        /// <summary>
+        /// Criar Cliente
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Cliente>> AddCliente([FromBody] Cliente cliente)
         {
@@ -64,7 +70,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar cliente");
             }
         }
-
+        /// <summary>
+        /// Update Cliente
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{cpf}")]
         public async Task<ActionResult<Cliente>> UpdateCliente(string cpf, [FromBody] Cliente cliente)
         {
@@ -81,7 +90,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar cliente");
             }
         }
-
+        /// <summary>
+        /// Delete Cliente
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{cpf}")]
         public async Task<ActionResult> DeleteCliente(string cpf)
         {

@@ -31,7 +31,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao obter especificações");
             }
         }
-
+        /// <summary>
+        /// Buscar Especificacao
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Especificacao>> GetEspecificacao(int id)
         {
@@ -48,6 +51,10 @@ namespace CGenius.Controllers
             }
         }
 
+        /// <summary>
+        /// Criar Especificacao
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Especificacao>> AddEspecificacao([FromBody] Especificacao especificacao)
         {
@@ -64,7 +71,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar especificação");
             }
         }
-
+        /// <summary>
+        /// Update Especificacao
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Especificacao>> UpdateEspecificacao(int id, [FromBody] Especificacao especificacao)
         {
@@ -81,7 +91,10 @@ namespace CGenius.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar especificação");
             }
         }
-
+        /// <summary>
+        /// Delete Especificacao
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> DeleteEspecificacao(int id)
         {
