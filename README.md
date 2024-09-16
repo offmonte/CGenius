@@ -9,27 +9,41 @@ Optamos por desenvolver a aplicação em uma arquitetura monolítica em vez de micr
 Para garantir o correto funcionamento do CRUD e dos relacionamentos entre as entidades, siga a ordem de criação dos registros (POST) de acordo com as dependências:
 
 ### Ordem de Postagem
-1. **Plano** (necessário para criar Script)
-2. **Script** (necessário para criar Cliente e Venda)
-3. **Cliente** (necessário para criar Especificacao e Venda)
-4. **Especificacao** (necessário para criar Venda)
-5. **Atendente** (necessário para criar Venda)
+1. **Atendente** (necessário para criar Venda)
+2. **Plano** (necessário para criar Script)
+3. **Script** (necessário para criar Cliente e Venda)
+4. **Cliente** (necessário para criar Especificacao e Venda)
+5. **Especificacao** (necessário para criar Venda)
 6. **Venda** (última entidade, pois depende de todas as anteriores)
 
 ---
 
 ## Exemplos de JSONs para POST
 
-### 1. Plano
+### 1. Atendente
 ```json
 {
-    "NomePlano": "Plano Premium",
-    "DescricaoPlano": "Acesso ilimitado a todos os serviços.",
-    "ValorPlano": 199.99
+  "cpfAtendente": "98765432100",
+  "nomeAtendente": "Maria Souza",
+  "setor": "Vendas",
+  "senha": "senha123",
+  "perfilAtendente": "Atendente Senior",
+  "vendas": []
 }
 ```
 
-### 2. Script
+### 2. Plano
+```json
+{
+    "NomePlano": "Plano Premium Plus",
+    "DescricaoPlano": "Acesso ilimitado a todos os serviços.",
+    "ValorPlano": 199.99,
+    "scripts": [],
+    "vendas": []
+}
+```
+
+### 3. Script
 ```json
 {
     "DescricaoScript": "Script de venda para clientes premium.",
@@ -37,7 +51,7 @@ Para garantir o correto funcionamento do CRUD e dos relacionamentos entre as ent
 }
 ```
 
-### 3. Cliente
+### 4. Cliente
 ```json
 {
     "CpfCliente": "12345678900",
@@ -52,7 +66,7 @@ Para garantir o correto funcionamento do CRUD e dos relacionamentos entre as ent
 }
 ```
 
-### 4. Especificacao
+### 5. Especificacao
 ```json
 {
     "TipoCartaoCredito": "Black",
@@ -66,16 +80,7 @@ Para garantir o correto funcionamento do CRUD e dos relacionamentos entre as ent
 }
 ```
 
-### 5. Atendente
-```json
-{
-    "CpfAtendente": "98765432100",
-    "NomeAtendente": "Maria Souza",
-    "Setor": "Vendas",
-    "Senha": "senha123",
-    "PerfilAtendente": "Atendente Senior"
-}
-```
+
 
 ### 6. Venda
 ```json
