@@ -18,7 +18,10 @@ namespace CGenius.Controllers
         {
             _especificacaoRepository = especificacaoRepository;
         }
-
+        /// <summary>
+        /// Buscar todas Especificacoes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Especificacao>>> GetEspecificacoes()
         {

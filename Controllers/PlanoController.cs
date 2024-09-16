@@ -18,7 +18,10 @@ namespace CGenius.Controllers
         {
             _planoRepository = planoRepository;
         }
-
+        /// <summary>
+        /// Buscar todos Planos
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Plano>>> GetPlanos()
         {

@@ -18,7 +18,10 @@ namespace CGenius.Controllers
         {
             _vendaRepository = vendaRepository;
         }
-
+        /// <summary>
+        /// Buscar todos Vendas
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Venda>>> GetVendas()
         {

@@ -16,7 +16,10 @@ namespace CGenius.Controllers
         {
             _scriptRepository = scriptRepository;
         }
-
+        /// <summary>
+        /// Buscar todos Scripts
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Script>>> GetScripts()
         {

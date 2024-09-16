@@ -18,7 +18,10 @@ namespace CGenius.Controllers
         {
             _atendenteRepository = atendenteRepository;
         }
-        
+        /// <summary>
+        /// Buscar todos Atendente
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Atendente>>> GetAtendentes()
         {

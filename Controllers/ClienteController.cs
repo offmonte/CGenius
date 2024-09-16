@@ -18,7 +18,10 @@ namespace CGenius.Controllers
         {
             _clienteRepository = clienteRepository;
         }
-
+        /// <summary>
+        /// Buscar todos Clientes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
         {
