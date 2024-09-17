@@ -93,3 +93,11 @@ Para garantir o correto funcionamento do CRUD e dos relacionamentos entre as ent
 }
 ```
 
+
+## Integrantes
+
+RM99814- Anna Soares
+RM98214- Gabriel Cirilo
+RM551423-Izabelly Oliveira
+RM551604- Lucas Monte
+RM99578-Marcos Garrido
